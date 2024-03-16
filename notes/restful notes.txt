@@ -1,0 +1,166 @@
+REST API REPRESENTATIONAL STATE TRANSFER APPLICATION PROGRAMMING PROGRAMMING INTERFACE
+END POINT
+
+mas pinasimple ng code igniter
+isang route lang
+
+to see is to believe
+
+app\config\routes.php
+
+ $routes->setDefaultnamespace('App\Controllers');
+$routes->setDefaultController('Home');
+$routes->setDefaultMethod('index');
+$routes->setTranslateURIDashes(false);
+$routes->set404Override();
+
+
+$routes->get('/', 'Home::index');
+
+$routes->resource('offices',['controller' => 'OfficeController', 'except' => 'new, edit']);
+$routes->resource('tickets',['controller' => 'TicketController', 'except' => 'new, edit']);
+
+
+//create new resource route except new and edit
+
+service('auth')->routes($routes);
+
+
+crud na tayo
+sa controller dapat extends resource controller hindi base controller
+
+use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\http\Response;
+
+
+public function create()
+    {
+        $officeModel= new \App\Models\Office();
+        $data=$this->request->getPost();// eto yung lahat ng data galing sa client
+
+        //trap
+        if(!$officeModel->validate($data)){ //if not true false, meaning may error return response to user
+                $response= array(
+                    'status'=>'error',
+                    'message'=>$officeModel->errors()
+                );
+
+                return $this->response->setStatusCode(Response::HTTP_BAD_REQUEST)->setJSON($response);
+                //return agad if may error
+
+        }
+        $officeModel->insert($data);
+        $response= array(
+            'status'=>'success',
+            'message'=>'Office created successfully'
+        );
+
+        return $this->response->setStatusCode(Response::HTTP_CREATED)->setJSON($response);
+        //IF WALA ERROR SAVE NANG DATA
+
+
+if ok na test sa thunderclient
+    }
+
+    -----------------------------
+    show naman
+
+     public function show($id = null)
+    {
+        $officeModel= new \App\Models\Office();
+        $data=$officeModel->find($id);
+
+        if(!$data){
+                $response= array(
+                    'status'=>'error',
+                    'message'=>'Office not found'
+                );
+                // return $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
+                return $this->response->setStatusCode(Response::HTTP_NOT_FOUND)->setJSON($response);
+
+        }
+
+        return $this->response->setStatusCode(Response::HTTP_OK)->setJSON($data);
+    }
+____________________________________
+
+UPDATE NAMAN TAYO UPDATE. MADALI LANG YUNG UPDATE
+kopyahin natin yung create
+
+INTRO ENABLE CORS PARA MAACCESS NG IBANG CLIENT ANG SERVER
+php spark serve --port 8000 --host 0.0.0.0
+
+
+ public function update($id = null)
+    {
+         
+        $officeModel= new \App\Models\Office();
+        $data=$this->request->getJSON();// in preparation para sa ui
+
+        //trap
+        if(!$officeModel->validate($data)){ //if not true false, meaning may error return response to user
+                $response= array(
+                    'status'=>'error',
+                    'message'=>$officeModel->errors()
+                );
+
+                return $this->response->setStatusCode(Response::HTTP_BAD_REQUEST)->setJSON($response);
+                //return agad if may error
+
+        }
+        $officeModel->update($id, $data); // parameter is id and data
+        $response= array(
+            'status'=>'success',
+            'message'=>'Office updated successfully'
+        );
+
+        return $this->response->setStatusCode(Response::HTTP_OK)->setJSON($response); // RESPONSE 200
+        //IF WALA ERROR SAVE NANG DATA
+
+    }
+    ____________________________________
+
+    LASTLY YUNG DELETE NA function
+    KOPYAHIN LANG YUNG UPDATE PATTERN LANG
+
+     public function delete($id = null)
+    {
+        $officeModel= new \App\Models\Office();
+        $data=$officeModel->find($id);
+
+        //trap
+        if($data){ 
+           $officeModel->delete($id);//delete if exist
+            $response= array(
+                    'status'=>'success',
+                    'message'=>'Office deleted successfully'
+                );
+
+                return $this->response->setStatusCode(Response::HTTP_OK)->setJSON($response);
+
+
+        }
+        
+        $response= array(
+            'status'=>'error',
+            'message'=>'Record Not found'
+        );
+
+        return $this->response->setStatusCode(Response::HTTP_BAD_REQUEST)->setJSON($response); // RESPONSE 200
+        //IF WALA ERROR SAVE NANG DATA
+
+    }
+}
+
+
+status response para hindi na ihandle individually 
+parang sa toast
+
+---------------------------------
+pag dating sa TicketController
+copy pase lahat ng nasa office controller
+
+
+ctrl shift l - for multiple line editing
+to change all instance ng code from officeModel to ticketModel
