@@ -8,9 +8,6 @@ class Home extends BaseController
 {
     public function index(): string
     {
-
-
-  
         $stmt = $this->connect()->query("SELECT * FROM tbUser");
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -33,6 +30,17 @@ class Home extends BaseController
 
 
        
+
+    }
+
+    public function update_user($UserCode){
+
+        $UserName=$this->request->getPost('UserName');
+
+        $stmt=$this->connect()->prepare("UPDATE tbUser SET UserName=? WHERE UserCode=?");
+        $stmt->execute([$UserName,$UserCode]);
+
+        redirect()->to('/');
 
     }
 }
