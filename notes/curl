@@ -1,0 +1,59 @@
+
+To access a CodeIgniter endpoint from another site, you can follow these general steps:
+
+Set Up Your CodeIgniter Application: Ensure your CodeIgniter application is set up correctly and the endpoints you want to access are defined and functional.
+
+Enable CORS (Cross-Origin Resource Sharing): If the CodeIgniter endpoint is on a different domain from the site you're accessing it from, you might need to enable CORS to allow cross-origin requests. You can do this by modifying your CodeIgniter application's configuration or by adding appropriate headers in your controller methods.
+
+Here's an example of how you can enable CORS in CodeIgniter by adding appropriate headers in your controller method:
+
+------------------------------------------
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+------------------------------------------
+
+
+------------------------------------------
+<?php
+
+// Endpoint URL
+$endpoint_url = 'http://example.com/codeigniter_endpoint';
+
+// Data to send (if any)
+$data = array(
+    'key' => 'value',
+    // Add any other data you need to send
+);
+
+// Initialize cURL session
+$ch = curl_init();
+
+// Set cURL options
+curl_setopt($ch, CURLOPT_URL, $endpoint_url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_POST, true); // Set to true if sending POST data
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); // Set the POST data
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/x-www-form-urlencoded',
+    // Add any other headers if required
+));
+
+// Execute cURL request
+$response = curl_exec($ch);
+
+// Check for errors
+if ($response === false) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    // Handle response
+    $decoded_response = json_decode($response, true); // Decode JSON response if applicable
+    var_dump($decoded_response);
+}
+
+// Close cURL session
+curl_close($ch);
+
+?>
+----------------------------------------------------
