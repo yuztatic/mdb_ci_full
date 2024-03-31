@@ -4,19 +4,25 @@ namespace App\Controllers;
 use PDO;
 use PDOException;
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+// header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+// header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $stmt = $this->connect()->query("SELECT * FROM tbUser");
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return view('welcome_message', ['users'=>$users]);
+
+
+        // // return view('welcome_message', ['users'=>$users]);
+        // // return json_encode($users);
+        // echo print_r(json_encode($users),true);
+        // // echo json_encode($users);
     }
 
     public function connect(){
@@ -27,6 +33,7 @@ class Home extends BaseController
         try {
             $pdo = new PDO("odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=$databasePath; uid=; pwd=$password");
            $data="Connected to the database successfully.";
+           
            return $pdo;
         } catch (PDOException $e) {
           //  die('Connection failed: ' . $e->getMessage());
