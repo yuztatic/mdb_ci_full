@@ -1,0 +1,9 @@
+10320R05-16338-5065109-202403111510-28
+
+10320 : TransRecordID
+R05	: RegCode
+16338	: CoePrintingID
+5065109	:Security Paper Number
+20240311:RefDate
+15:10	: RefDate
+
