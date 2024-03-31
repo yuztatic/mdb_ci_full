@@ -27,7 +27,7 @@ class Home extends BaseController
 
     public function connect(){
 
-        $databasePath = 'C:\xampp\htdocs\mdb_ci\mdb\dbUser.mdb';    // to be used in xampp
+        $databasePath = 'C:\xampp\htdocs\mdb_ci_full\mdb\dbUser.mdb';    // to be used in xampp
         $password = '5s6rDB*&6'; // Your database password (if applicable)
         
         try {
