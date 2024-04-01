@@ -9,6 +9,6 @@ class DbTransTblHgeController extends BaseController
 {
     public function index()
     {
-        return view('pages/HGE');
+        return view('hge/add');
     }
 }
