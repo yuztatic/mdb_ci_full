@@ -17,18 +17,19 @@
 
             <div class="card card-info">
                 <div class="card-header bg-teal">
-                    <h3 class="card-title">Different Width</h3>
+                    <h3 class="card-title">Personal Information</h3>
                 </div>
                 <div class="card-body">
-                    <div class="row">
+
+                    <div class="row callout callout-info">
                         <div class="col-3">
-                            <input type="text" class="form-control" placeholder=".col-3">
+                            <input type="text" class="form-control" placeholder="Last Name">
                         </div>
                         <div class="col-4">
-                            <input type="text" class="form-control" placeholder=".col-4">
+                            <input type="text" class="form-control" placeholder="First Name">
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control" placeholder=".col-5">
+                            <input type="text" class="form-control" placeholder="Middle Name">
                         </div>
                     </div>
                 </div>

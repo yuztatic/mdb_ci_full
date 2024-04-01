@@ -68,7 +68,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-teal">
     <div class="wrap">
         <h1>404</h1>
 
