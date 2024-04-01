@@ -212,19 +212,7 @@
             <th>isDeleted</th>
             <!-- Add similar headers for other columns -->
         </tr>
-        <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= esc($user['RegCode']) ?></td>
-                <td><?= esc($user['UserCode']) ?></td>
-                <td><?= esc($user['UserName']) ?></td>
-                <td><?= esc($user['UserDesignation']) ?></td>
-                <td><?= esc($user['UserGroupID']) ?></td>
-                <td><?= esc($user['RefDate']) ?></td>
-                <td><?= esc($user['LastPasswordUpdate']) ?></td>
-                <td><?= esc($user['isDeleted']) ?></td>
-                <!-- Add similar rows for other columns -->
-            </tr>
-            <?php endforeach; ?>
+
     </table>
 
 <!-- SCRIPTS -->
