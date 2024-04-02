@@ -35,7 +35,8 @@ class DbTransTblHgeModel extends Model
         'CourseCode',
         'Major',
         'HonorsReceived',
-        'DateGrad'
+        'DateGrad',
+        'ModeOfEduc',
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -43,8 +44,8 @@ class DbTransTblHgeModel extends Model
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    protected $createdField  = 'CreatedDate';
+    protected $updatedField  = 'LastUpdatedDate';
     protected $deletedField  = 'deleted_at';
 
     // Validation
