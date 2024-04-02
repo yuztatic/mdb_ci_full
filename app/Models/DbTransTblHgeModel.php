@@ -48,7 +48,27 @@ class DbTransTblHgeModel extends Model
     protected $deletedField  = 'deleted_at';
 
     // Validation
-    protected $validationRules      = [];
+    protected $validationRules      = [
+        'RegCode' => 'required',
+        'EligType' => 'required',
+        'EffDate' => 'required',
+        'LName' => 'required',
+        'FName' => 'required',
+        'Address' => 'required',
+        'BDate' => 'required',
+        'BPlace' => 'required',
+        'Sex' => 'required',
+        'CivilStat' => 'required',
+        'Createdby' => 'required',
+        'CreatedDate' => 'required',
+        'LastUpdatedby' => 'required',
+        'LastUpdatedDate' => 'required',
+        'HEICode' => 'required',
+        'CourseCode' => 'required',
+        'Major' => 'required',
+        'HonorsReceived' => 'required',
+        'DateGrad' => 'required'
+    ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
