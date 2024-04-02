@@ -22,17 +22,17 @@
                 <form>
                     <div class="card-body">
                         <div class="form-row">
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="RegCode">Region Code</label>
-                                <input type="text" class="form-control" id="RegCode" name="RegCode" length="2">
+                                <input type="text" class="form-control" id="RegCode" name="RegCode" length="2" value="<?= $refRegion['RegCode'] ;?>" disabled>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-5">
                                 <label for="EligType">Eligibility Type</label>
-                                <input type="text" class="form-control" id="EligType" name="EligType" value="HONOR GRADUATE ELIGIBILITY">
+                                <input type="text" class="form-control" id="EligType" name="EligType" value="HONOR GRADUATE ELIGIBILITY" disabled>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="EffDate">Effective Date</label>
                                 <input type="date" class="form-control" id="EffDate" name="EffDate">
                             </div>
@@ -61,11 +61,11 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <label for="MdnName">Middle Name</label>
                                 <input type="text" class="form-control" id="MdnName" name="MdnName" placeholder="Middle Name">
                             </div>
-                            <div class="form-group col-md-1">
+                            <div class="form-group col-md-2">
                                 <label for="MI">Middle Initial</label>
                                 <input type="text" class="form-control" id="MI" name="MI" placeholder="Middle Initial">
                             </div>
@@ -185,8 +185,19 @@
 
 
                         </div>
+                        <div class="col">
+                        <div class="col-md-3 float-right">
+                        <button type="button" class="btn btn-secondary btn-lg btn-block">Cancel</button>
+        </div>
+                        </div>
+                        <div class="col">
+                            <div class="col-md-3 float-right">
+                            <button type="submit" class="btn btn-primary float-right btn-lg btn-block">Save</button>
+                             </div>
 
-                        <button type="submit" class="btn btn-primary float-right btn-lg">Save</button>
+                        </div>
+
+                        
                     </div>
 
 
@@ -198,7 +209,7 @@
             </div>
 
             </div>
-            
+
             </form>
 
 
