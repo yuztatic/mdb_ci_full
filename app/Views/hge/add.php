@@ -82,7 +82,7 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="BPlace">Birth Place</label>
-                                <input type="text" class="form-control" id="BPlace" name="BPlace">
+                                <input type="text" class="form-control" id="BPlace" name="BPlace" placeholder="Birth Place">
                             </div>
                         </div>
 
@@ -110,7 +110,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="Address">Address</label>
-                                <input type="text" class="form-control" id="Address" name="Address">
+                                <input type="text" class="form-control" id="Address" name="Address" placeholder="Address">
                             </div>
                         </div>
 
@@ -151,7 +151,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="Major">Major Field of Study (if any)</label>
-                                <input type="text" class="form-control" id="Major" name="Major">
+                                <input type="text" class="form-control" id="Major" name="Major" placeholder="Major Field of Study (if any)">
                             </div>
 
                         </div>
@@ -167,13 +167,18 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="DateGrad">Date Graduated</label>
                                 <input type="date" class="form-control" id="DateGrad" name="DateGrad">
                             </div>
 
-                            <div class="form-group col-md-2"> 
-                                <label for="Mode
+                            <div class="form-group col-md-3"> 
+                                <label for="ModeOfEduc">Mode of Learning</label>
+                                <select class="form-control" id="ModeOfEduc" name="ModeOfEduc">
+                                    <option value="Select Mode">Select Mode</option>
+                                    <option value="CONVENTIONAL LEARNING">CONVENTIONAL LEARNING</option>
+                                    <option value="OPEN DISTANCE LEARNING">OPEN DISTANCE LEARNING</option>
+                                </select>
 
                             </div>
 
