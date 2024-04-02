@@ -172,7 +172,7 @@
                                 <input type="date" class="form-control" id="DateGrad" name="DateGrad">
                             </div>
 
-                            <div class="form-group col-md-3"> 
+                            <div class="form-group col-md-3">
                                 <label for="ModeOfEduc">Mode of Learning</label>
                                 <select class="form-control" id="ModeOfEduc" name="ModeOfEduc">
                                     <option value="Select Mode">Select Mode</option>
@@ -186,7 +186,7 @@
 
                         </div>
 
-
+                        <button type="submit" class="btn btn-primary float-right btn-lg">Save</button>
                     </div>
 
 
@@ -198,6 +198,7 @@
             </div>
 
             </div>
+            
             </form>
 
 
