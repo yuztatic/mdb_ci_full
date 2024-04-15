@@ -68,7 +68,8 @@ class DbTransTblHgeModel extends Model
         'CourseCode' => 'required',
         'Major' => 'required',
         'HonorsReceived' => 'required',
-        'DateGrad' => 'required'
+        'DateGrad' => 'required',
+        'ModeOfEduc' => 'required',
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;

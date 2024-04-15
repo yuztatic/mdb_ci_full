@@ -13,8 +13,6 @@ class DbreferenceRefRegionModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-
-
         'RegCode',
         'RegionName',
         'RegionAdr',
