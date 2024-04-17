@@ -132,6 +132,13 @@
                                 <label for="School Name">School Name</label>
                                 <select class="form-control" id="School Name" name="School Name">
                                     <option value="Select School">Select School</option>
+                                    <?php
+                                    foreach($refHigherEducInst as $refHigherEducInst){
+                                        echo '<option value="'.$refHigherEducInst['HEICode'].'">'.$refHigherEducInst['HEIName'].'</option>';
+
+                                    }
+                                    
+                                    ?>
 
                                 </select>
                             </div>
