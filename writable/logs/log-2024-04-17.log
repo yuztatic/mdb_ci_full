@@ -1,0 +1,58 @@
+ERROR - 2024-04-17 02:49:23 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdb_ci_full', 3306, '', 0)
+#1 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\mdb_ci_full\app\Controllers\DbTransTblHgeController.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\DbTransTblHgeController->index()
+#8 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DbTransTblHgeController))
+#9 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\mdb_ci_full\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\mdb_ci_full\app\Controllers\DbTransTblHgeController.php(15): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\DbTransTblHgeController->index()
+#7 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DbTransTblHgeController))
+#8 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mdb_ci_full\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\mdb_ci_full\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-04-17 02:49:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `dbreference_ref_region`
+WHERE `RegCode` = :RegCode:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\DbTransTblHgeController.php(15): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DbTransTblHgeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DbTransTblHgeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\mdb_ci_full\\public\\index.php')
+CRITICAL - 2024-04-17 02:52:35 --> ErrorException: Undefined array key "geoRegDesc"
+in APPPATH\Views\hge\add.php on line 137.
+ 1 APPPATH\Views\hge\add.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "geoRegDesc"', 'C:\\xampp\\htdocs\\mdb_ci_full\\app\\Views\\hge\\add.php', 137)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\mdb_ci_full\\app\\Views\\hge\\add.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('hge/add', [], true)
+ 5 APPPATH\Controllers\DbTransTblHgeController.php(20): view('hge/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DbTransTblHgeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DbTransTblHgeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\mdb_ci_full\\public\\index.php')

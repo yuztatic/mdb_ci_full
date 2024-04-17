@@ -14,8 +14,8 @@ class DbTransTblHgeController extends BaseController
         $refRegion = new DbreferenceRefRegionModel();
         $data['refRegion'] = $refRegion->where('RegCode', '05')->first();
 
-         $refHigherEducInst = new DbrefereneRefHigherEducInstModel();
-         $data['refHigherEducInst'] =$refHigherEducInst->where('geoRegCode', '05')->findAll();
+        $refHigherEducInst = new DbrefereneRefHigherEducInstModel();
+        $data['refHigherEducInst'] =$refHigherEducInst->where('geoRegCode', '05')->findAll();
 
         return view('hge/add', $data);
 
