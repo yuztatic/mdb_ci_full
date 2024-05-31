@@ -4,23 +4,25 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DbreferenceRefRegionModel extends Model
+class DbrefereneRefHigherEducInstModel extends Model
 {
-    protected $table            = 'dbreference_ref_region';
-    protected $primaryKey       = 'RegCode';
+    protected $table            = 'dbreference_ref_higher_educ_inst';
+    protected $primaryKey       = 'HEICode';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'RegCode',
-        'RegionName',
-        'RegionAdr',
-        'RegionCompleteAdr',
+        'geoRegCode',
+        'geoProvCode',
+        'geoCityCode',
+        'HEICode',
+        'CHEDID',
+        'HEIName', 
         'RefDate',
-        'isDeleted',
-        'DateDeleted',
         'Remarks',
+        'isDeleted',
+        'DateDeleted'
     ];
 
     protected bool $allowEmptyInserts = false;
