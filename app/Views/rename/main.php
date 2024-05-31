@@ -31,7 +31,7 @@ $this->section('body');
                 </tr>
                 
             <?php 
-            rename("C:/xampp/htdocs/mdb_ci_full/public/for_rename/" . $data_yuz['original_filename'].".pdf", "C:/xampp/htdocs/mdb_ci_full/public/for_rename/" . $data_yuz['new_filename'].".pdf");
+            rename("C:/xampp/htdocs/mdb_ci_full/public/for_rename/" . $data_yuz['original_filename'].".pdf", "C:/xampp/htdocs/mdb_ci_full/public/for_rename/InvitationLetterToRegistrars_" . $data_yuz['new_filename'].".pdf");
           
         } ?>
         </tbody>
